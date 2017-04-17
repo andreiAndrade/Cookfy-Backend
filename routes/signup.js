@@ -7,12 +7,15 @@ var router = express.Router();
 /* POST signup listing. */
 router.post('/', function (req, res, next) {
 
-    req.checkBody('firstName', 'Invalid name')
+    req.checkBody('fullName', 'Invalid name')
         .notEmpty().withMessage('Param is required!')
         .isAlpha().withMessage('Param is not a string!');
-    req.checkBody('lastName', 'Invalid lastname')
-        .notEmpty().withMessage('Lastname is required!')
-        .isAlpha().withMessage('Lastname is not a string!');
+    req.checkBody('registry', 'Invalid registry')
+        .notEmpty().withMessage('Registry is required!')
+        .isAlpha().withMessage('Registry is not a string!');
+    req.checkBody('course', 'Invalid course')
+        .notEmpty().withMessage('Course is required!')
+        .isAlpha().withMessage('Course is not a string!');
     req.checkBody('email', 'Invalid email')
         .notEmpty().withMessage('Email is required!')
         .isEmail().withMessage('Email is not a email!');
